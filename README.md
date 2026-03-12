@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report
 
 df = pd.read_csv("music_sentiment_dataset.csv")
 
@@ -58,18 +58,6 @@ print("\nModel Accuracy:", accuracy)
 print("\nClassification Report:\n")
 print(classification_report(y_test, y_pred))
 
-show_matrix = input("Do you want to see confusion matrix? (yes/no): ")
-
-if show_matrix.lower() == "yes":
-    cm = confusion_matrix(y_test, y_pred)
-    plt.figure()
-    plt.imshow(cm)
-    plt.title("Confusion Matrix")
-    plt.xlabel("Predicted Label")
-    plt.ylabel("True Label")
-    plt.colorbar()
-    plt.show()
-
 print("\n----- Emotion Detection -----")
 
 user_text = input("Enter a sentence: ")
@@ -80,10 +68,7 @@ prediction = model.predict(user_vector)
 
 print("Predicted Emotion:", prediction[0])
 ```
-<img width="1082" height="657" alt="image" src="https://github.com/user-attachments/assets/578adb80-a995-4fad-b0a1-bbf3220eea59" />
-<img width="679" height="487" alt="image" src="https://github.com/user-attachments/assets/f48d2029-730e-43c9-9592-926b960eff1a" />
-<img width="809" height="691" alt="image" src="https://github.com/user-attachments/assets/d8ff8b14-9602-45df-91ae-be1521f2fc0b" />
-<img width="805" height="687" alt="image" src="https://github.com/user-attachments/assets/05d69878-f35c-4292-bb22-b3e2d0a17846" />
-
-
+<img width="925" height="906" alt="image" src="https://github.com/user-attachments/assets/e218aad6-74d2-43eb-bb2d-33ed599646f1" />
+<img width="561" height="191" alt="image" src="https://github.com/user-attachments/assets/aa683bcb-ae83-4cc9-8f50-d63fd3deac80" />
+<img width="798" height="684" alt="image" src="https://github.com/user-attachments/assets/f5a1d2ab-8e52-463d-8334-42a6c5e1236b" />
 
